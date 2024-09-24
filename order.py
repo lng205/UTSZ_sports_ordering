@@ -71,7 +71,7 @@ def make_payment(bill_no: str) -> None:
     )
     logging.info(f"发送支付请求: {bill_no}")
     response = req.get()
-    logging.info(f"支付请求相应：{response.json()}")
+    logging.info(f"支付请求响应：{response.json()}")
 
 if __name__ == '__main__':
     order('2024-09-25', 10, (15, 17), False)

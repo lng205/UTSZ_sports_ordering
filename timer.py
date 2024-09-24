@@ -10,7 +10,7 @@ def timer(target_day: str) -> None:
     """
     target = datetime.strptime(target_day, '%Y-%m-%d')
     target = target - timedelta(days=2)
-    target = target.replace(hour=22, minute=0, second=0)
+    target = target.replace(hour=22, minute=0, second=3)
     delta = target - datetime.now()
     if delta.total_seconds() > 0:
         logging.info(f'等待 {delta.days} 天 {delta.seconds//3600} 小时 {delta.seconds%3600//60} 分钟')

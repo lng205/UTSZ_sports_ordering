@@ -1,15 +1,18 @@
 # UTSZ sports ordering scripts
 
 订场需要定时操作，有点繁琐，所以写了个脚本。
+
 **场地资源仍然是有限的，脚本仅应用于替代本就存在的人工操作。**
 
 - 本脚本基于`python 3.12.6`开发，不保证向下兼容。
+
+脚本会等待至目标日期前2天的22:00:03开始订场。对于已经发布的场次，脚本会立即订场。
 
 ## 使用方法
 
 - 获取微信cookies，保存到`data/cookies.json`。
 - 使用pip安装python依赖（推荐使用venv）：`pip install -r requirements.txt`。
-- 运行脚本：`python main.py`。
+- 运行脚本：`python main.py 2024-09-30 10 15 17`。（订2024年9月30日的10号15点-17点场地）
 
 ### 获取cookies
 
