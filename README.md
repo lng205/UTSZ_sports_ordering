@@ -13,7 +13,7 @@
 ## 使用方法
 
 - 获取微信cookies，保存到`data/cookies.json`。
-- 使用pip安装python依赖（推荐使用venv）：`pip install -r requirements.txt`。
+- 使用pip安装python依赖：`pip install -r requirements.txt`。
 - 运行脚本：`python main.py 2024-09-30 10 15 17`。（订2024年9月30日的10号15点-17点场地）
 
 ### 获取cookies
