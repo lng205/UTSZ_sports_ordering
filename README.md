@@ -1,5 +1,7 @@
 # UTSZ sports ordering scripts
 
+![alt text](assets/res.png)
+
 订场需要定时操作，有点繁琐，所以写了个脚本。
 
 **场地资源仍然是有限的，脚本仅应用于替代本就存在的人工操作。**
