@@ -35,7 +35,10 @@ def make_order(day: str, venue: int, id_dict: dict, time: tuple) -> str:
     )
     logging.info(f"发送预约请求: {day} {venue} {time}")
     response = req.get()
-    logging.info(f"预约请求响应：{response.json()}")
+    if response.status_code == 200:
+        logging.info(f"预约请求响应：{response.json()}")
+    else:
+        logging.error(f"预约请求网络错误: {response.status_code}")
 
     try:
         bill_no = response.json()["result"]["billRecordNo"]
@@ -77,7 +80,10 @@ def make_payment(bill_no: str) -> None:
     )
     logging.info(f"发送支付请求: {bill_no}")
     response = req.get()
-    logging.info(f"支付请求响应：{response.json()}")
+    if response.status_code == 200:
+        logging.info(f"支付请求响应：{response.json()}")
+    else:
+        logging.error(f"支付请求网络错误: {response.status_code}")
 
 
 if __name__ == "__main__":
