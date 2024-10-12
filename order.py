@@ -19,11 +19,13 @@ class Req:
         self.data = data
         self.url = url
 
-    def get(self) -> requests.Response:
+    def post(self) -> requests.Response:
         response = requests.post(
             self.url,
             cookies=self.cookies,
             data=self.data,
+            # Disable SSL verification for package grabber proxy
+            verify=False
         )
         return response
 
@@ -34,7 +36,7 @@ def make_order(day: str, venue: int, id_dict: dict, time: tuple) -> str:
         url="https://yktsport.utsz.edu.cn/DXC/api/services/app/WeixinBillVenue/VenueBillAsync",
     )
     logging.info(f"发送预约请求: {day} {venue} {time}")
-    response = req.get()
+    response = req.post()
     if response.status_code == 200:
         logging.info(f"预约请求响应：{response.json()}")
     else:
@@ -79,7 +81,7 @@ def make_payment(bill_no: str) -> None:
         url="https://yktsport.utsz.edu.cn/DXC/api/services/app/SynjonesOpenPay/VenueBillPayBySynjonesAsync",
     )
     logging.info(f"发送支付请求: {bill_no}")
-    response = req.get()
+    response = req.post()
     if response.status_code == 200:
         logging.info(f"支付请求响应：{response.json()}")
     else:
