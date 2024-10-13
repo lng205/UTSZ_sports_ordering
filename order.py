@@ -13,7 +13,7 @@ def order(day: str, venue=10, time=(15, 17), pay=False) -> None:
 
 
 class Req:
-    cookies = json.loads(open("data/cookies.json", "r", encoding="utf-8").read())
+    cookies = json.loads(open("data/cookies.json", "r").read())
 
     def __init__(self, data: dict, url: str) -> None:
         self.data = data

@@ -31,5 +31,5 @@ data/cookies_example.json中给出了一个示例。
 5. 在微信中访问体育中心页面。
 6. 选择任意请求，查看Cookies并复制：
 ![cookies](assets/cookies.png)
-7. 将Cookies保存到`data/cookies.json`，可删去`XSRF-TOKEN`项。
+7. 将Cookies保存到`data/cookies.json`，删去`XSRF-TOKEN`项和两个`DisplayName`项。
 8. 发送请求时请关闭代理，否则会遇到SSL证书错误警告。
